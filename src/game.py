@@ -1,6 +1,6 @@
 import time
 import random
-from random import random, randint
+from random import randint
 from collections import deque
 
 money = 0.0
@@ -41,17 +41,24 @@ FINAL_FLIP_TREE = {
 def winning_flip(probability_of_heads):
     result = flip(probability_of_heads)
     if result == 'heads':
-        endings, weights = FINAL_FLIP_TREE.items()
+        endings, weights = FINAL_FLIP_TREE.keys(), FINAL_FLIP_TREE.values()
         return random.choices(endings, weights)
 
 def flip(probability_of_heads):
-    num = randint(0,100)
-    if num <= int(probability_of_heads*100):
+    global consecutive_heads
+
+    distribution = {
+        "heads": probability_of_heads,
+        "tails": 1-probability_of_heads
+    }
+    outcomes, weights = list(distribution.keys()), list(distribution.values())
+    result = random.choices(outcomes, weights)[0]
+    if result == "heads":
         consecutive_heads += 1
-        return "heads"
     else:
         consecutive_heads = 0
-        return "tails"
+    return result
+
 def game_loop():
 
     while playing:
