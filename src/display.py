@@ -1,12 +1,12 @@
-# import time
-# import sys
+# # import time
+# # import sys
 
-# for i in range(101):
-#     print(f"\rProgress: {i}%", end="")
-#     sys.stdout.flush()
-#     time.sleep(0.05)
+# # for i in range(101):
+# #     print(f"\rProgress: {i}%", end="")
+# #     sys.stdout.flush()
+# #     time.sleep(0.05)
 
-# print()  # move to a new line after finishing
+# # print()  # move to a new line after finishing
 
 import time
 import random
@@ -57,3 +57,6 @@ for t in range(50):  # 50 updates
     print()
     print(f"Update #{t+1}/50 (press Ctrl+C to stop)")
     time.sleep(0.2)
+
+# print("Controls: [Space] Flip | [1] +Prob | [2] +Consec Mult | [3] +Speed | [4] +Coin Value | [Q] Quit\n")
+# print(f"\rProbability:        {probability:.2%}\nConsecutive Mult:   {consecutive_mult:.2f}x\nFlip Speed:         {flip_speed} flips/sec\nCoin Value:         ${coin_value:.2f}\n\nUpgrade Costs:  Prob $10  |  Mult $25  |  Speed $50  |  Value $40")
