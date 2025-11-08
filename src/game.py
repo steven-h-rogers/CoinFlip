@@ -117,6 +117,8 @@ def game_loop():
                         outcome = winning_flip()
                         if outcome != 'tails':
                             won == True
+                    # TODO:add a display feature
+                    time.sleep(FLIP_SPEED_TREE["current_speed"])
                 case'1':
                     upgrade_probability()
                     print(PROBABILITY_TREE["current_probability"])
