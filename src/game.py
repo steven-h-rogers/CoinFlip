@@ -108,7 +108,7 @@ def game_loop():
                 print("Invalid input")
 
         while won == False:
-            game_input = input("press space to flip \n press 1 to buy decrease flip time \n press 2 to buy better head proability \n press 3 to buy better consecutive multiplier, \n press 4 to buy increased coin value")
+            game_input = input("press space to flip \n press 1 to upgrade probability \n press 2 to upgrade consecutive mult \n press 3 to upgrade coin flip speed, \n press 4 to buy increased coin value")
             match game_input:
                 case' ':
                     if consecutive_heads <= 9:
@@ -118,13 +118,17 @@ def game_loop():
                         if outcome != 'tails':
                             won == True
                 case'1':
-                    pass
+                    upgrade_probability()
+                    print(PROBABILITY_TREE["current_probability"])
                 case'2':
-                    pass
+                    upgrade_consecutive_mult()
+                    print(CONSECUTIVE_HEADS_MULTIPLIER_TREE["current_multiplier"])
                 case'3':
-                    pass
+                    upgrade_flip_speed()
+                    print(FLIP_SPEED_TREE["current_speed"])
                 case'4':
-                    pass
+                    upgrade_coin_value()
+                    print(COIN_VALUE_TREE["current_value"])
 
 
 game_loop()

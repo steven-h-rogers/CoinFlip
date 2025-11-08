@@ -13,6 +13,24 @@ import random
 import os
 import sys
 
+
+class Display:
+    def __init__(self, probability, consecutive_mult, flip_speed, 
+                 coin_value, money, prob_cost, mult_cost,
+                  speed_cost, value_cost):
+        self.probability = probability
+        self.consecutive_mult = consecutive_mult
+        self.flip_speed = flip_speed
+        self.coin_value = coin_value
+        self.money = money
+        self.last_flips = ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-"]
+        self.prob_cost = prob_cost
+        self.mult_cost = mult_cost
+        self.speed_cost = speed_cost
+        self.value_cost = value_cost
+
+        pass
+
 # Simple function to clear the console
 def clear():
     os.system("cls" if os.name == "nt" else "clear")
@@ -36,6 +54,10 @@ for t in range(50):  # 50 updates
     flip_speed = max(1, flip_speed + random.choice([-1, 0, 1]))
     coin_value += random.uniform(-0.2, 0.5)
     money += random.uniform(-5, 10)
+    prob_cost = 0
+    mult_cost = 0
+    speed_cost = 0
+    value_cost = 0
 
     # Move cursor to top-left (ANSI escape: "\033[H") and clear to end ("\033[J")
     sys.stdout.write("\033[H\033[J")
