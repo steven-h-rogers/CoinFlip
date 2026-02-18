@@ -2,6 +2,7 @@ class Coin:
 
     def __init__(self):
         self.display_state = 'heads'
+        
 
     def flip_animation(self):
         pass

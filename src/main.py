@@ -4,8 +4,9 @@ pygame.init()
 
 screen = pygame.display.set_mode((1000,1000))
 clock = pygame.time.Clock()
-
 running = True
+
+
 
 while running:
     for event in pygame.event.get():
@@ -13,6 +14,10 @@ while running:
             print('quitting')
             pygame.quit()
             sys.exit()
+        else:
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    print('flip')    
 
     
 
